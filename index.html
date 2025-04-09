@@ -5,59 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stephen Mwangi - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-        }
-        .profile-pic {
-            margin: 20px auto;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: square;
-            margin: 0;
-            padding: 0 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
+        /* Add all your CSS code here */
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        header { background-color: #4CAF50; color: white; padding: 20px; text-align: center; }
+        .profile-pic { width: 150px; border-radius: 50%; margin: 20px auto; display: block; }
+        nav { background-color: #333; position: sticky; top: 0; padding: 10px; }
+        nav ul { list-style-type: none; display: flex; justify-content: center; padding: 0; }
+        nav ul li { margin: 0 10px; }
+        nav ul li a { color: white; text-decoration: none; }
+        nav ul li a:hover { color: #4CAF50; }
+        .tabs { display: flex; justify-content: center; margin-bottom: 15px; }
+        .tablinks { padding: 10px 15px; background-color: #f4f4f4; border: 1px solid #4CAF50; cursor: pointer; }
+        .tablinks:hover, .tablinks.active { background-color: #4CAF50; color: white; }
+        .tabcontent { display: none; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
     </style>
 </head>
 <body>
@@ -65,54 +26,67 @@
         <h1>Stephen Mwangi</h1>
         <p>Computer Science Student | Backend Developer</p>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <img src="passport_photo - Copy.jpg" alt="Stephen Mwangi" class="profile-pic">
     <main>
-        <img src="passport_photo - Copy.jpg" alt="Stephen Mwangi" class="profile-pic">
-        <section>
+        <!-- Add your content sections here -->
+        <section id="about-me">
             <h2>About Me</h2>
-            <p>Currently a student at Machakos University, pursuing a bachelor's degree in computer science. Alongside my university studies, I am enrolled in the ALX program, specializing in Backend Web Development. Driven by a curiosity to learn and a passion for problem-solving, I am eager to take on challenges and contribute to the ever-evolving tech landscape.</p>
+            <p>Currently a student at Machakos University...</p>
         </section>
-        <section>
+        <section id="education">
             <h2>Education</h2>
-            <p><strong>Machakos University</strong> (2023 - Present)</p>
             <ul>
                 <li>Microsoft Learn Student Ambassador Club</li>
-                <li>Google Developer Student Club</li>
-                <li>Huawei Club</li>
+                <!-- Add more items -->
             </ul>
         </section>
-        <section>
+        <section id="experience">
             <h2>Experience</h2>
-            <h3>Microsoft Learn Student Ambassador</h3>
-            <ul>
-                <li>Hosted workshops, webinars, and hands-on sessions to promote Microsoft technologies.</li>
-                <li>Mentored peers, fostering a culture of learning and collaboration.</li>
-            </ul>
-            <h3>Social Media Manager</h3>
-            <ul>
-                <li>Managed social media for GDGon Campus and MLSA Machakos University.</li>
-                <li>Promoted events, driving community engagement.</li>
-            </ul>
+            <div class="tabs">
+                <button class="tablinks" onclick="openTab(event, 'Ambassador')">Ambassador</button>
+                <button class="tablinks" onclick="openTab(event, 'SocialMedia')">Social Media</button>
+            </div>
+            <div id="Ambassador" class="tabcontent">
+                <ul>
+                    <li>Hosted workshops...</li>
+                </ul>
+            </div>
+            <div id="SocialMedia" class="tabcontent">
+                <ul>
+                    <li>Managed social media...</li>
+                </ul>
+            </div>
         </section>
-        <section>
-            <h2>Projects</h2>
-            <h3>Machakos Sports Network</h3>
-            <p>Developed a comprehensive website for centralizing student engagement in sports activities, including features like user registration, player profiles, and partnership opportunities.</p>
-        </section>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: Python, Java, C, Kotlin</li>
-                <li>Frameworks/Tools: Git, Microsoft Office Suite</li>
-                <li>Soft Skills: Communication, teamwork, leadership</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Contact</h2>
-            <p><a href="https://www.linkedin.com/in/stephen-mwangi-446150303" target="_blank">LinkedIn Profile</a></p>
-        </section>
+        <!-- More sections (Projects, Skills, Contact) -->
     </main>
-    <footer>
-        <p>© 2025 Stephen Mwangi. All Rights Reserved.</p>
-    </footer>
+    <footer>© 2025 Stephen Mwangi. All Rights Reserved.</footer>
+    <script>
+        // Add your JavaScript code here
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script src="script.js"></script>
+    
 </body>
 </html>
